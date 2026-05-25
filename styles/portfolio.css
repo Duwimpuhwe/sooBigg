@@ -1,0 +1,206 @@
+:root {
+  --link-color: black;
+  --font-family: Garamond;
+  --font-fallback: Sans-serif;
+  --font-size: 1.3rem;
+  --anchor-color: rgb(19, 59, 84);
+  --anchor-fWeight: 500px;
+  --tableHeader-bcgrnd: rgba(197, 191, 183, 0.3);
+  --h2-textColor: rgb(11, 11, 84);
+  --th-backgroundColor: rgba(140, 155, 156, 0.553);
+}
+
+/*Global styling*/
+body {
+  margin: 0;
+  border: 0;
+}
+h2 {
+  color: var(--h2-textColor);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 10px;
+}
+
+
+/* Navigation bar styling */
+.nav-container {
+  width: 100%;
+  height: 60px;
+  display: flex; /* To allow a two dimensional layout.......It should be in the parent*/
+  flex-direction: row; /* it is a default direction also*/
+}
+
+a.page_link {
+  color: var(--link-color);
+  font-family: var(--font-family),var(--font-fallback);
+  font-size: var(--font-size);
+  margin: 20px;
+  text-decoration: none;
+  
+}
+
+a.page_link:hover {
+  font-weight: 800;
+}
+
+.page_buy {
+  position: absolute;
+  right: 40px;
+}
+
+.page_about {
+  position: absolute;
+  right: 100px;
+}
+
+.page_home {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center; /*To center on cross-axis, Most used value (navbars, icons + text)*/
+}
+
+.page_portfolio {
+  position: absolute;
+  right: 180px;
+}
+
+.page_link.active {
+  color: rgb(60, 49, 124);
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+/* Styling header and summary*/
+.headerSummary{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.mainSummary {
+  margin-top: 40px;
+  width: 500px;
+}
+.mainSummary .myMedia img {
+  filter: grayscale(20%) brightness(60%) sepia(70%);
+  border-radius: 20%;
+}
+
+
+.portfolioHeader {
+  margin-top: 40px;
+  width: 400px;  
+}
+.headerList {
+  padding: 0;
+}
+
+.subListing {
+  list-style-type: circle;
+  margin: 10px 0;
+}
+
+.listAnchor {
+  font-style: italic;
+  color: var( --anchor-color);
+  font-weight: var(--anchor-fWeight);
+  text-decoration: none;
+}
+
+.myMedia {
+  display: flex;
+  gap: 30px;
+}
+/* Styling contacts and skills */
+.contactSkillsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 330px;
+}
+.contactContainer {
+  width: 300px;
+  margin-left: 100px;
+}
+.skillsContainer {
+  margin-right: 20px;
+  margin-left: 80px;
+}
+
+.contactContainer img {
+  width: 17px;
+  height: 17px;
+}
+
+.contactContainer p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Styling main content*/
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sectionContainer {
+  width: 100%;
+  height: 100%;
+  margin: 10px;  
+}
+
+.educBackrnd, .contrProject, .pubTrain, .experSkill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  width: 80%;  
+}
+
+.educationtable thead th, .keyProjectsTable thead th, .trainingTable thead th, .experienceTable thead th {
+  background-color: var( --tableHeader-bcgrnd);
+}
+
+.keyProjectsTable thead th:first-child, .pubTrain thead th:first-child,.experSkill thead th:first-child  {
+  width: 150px;
+}
+.keyProjectsTable tbody th, .educationtable tbody th, .trainingTable tbody th, .experienceTable tbody th {
+  background-color: var(--th-backgroundColor);
+  font-style: italic;
+}
+
+.keyProjectsTable tbody li, .pubTrain tbody td {
+  text-align: left;
+  margin: 10px;
+}
+
+.keyProjectsTable h4 {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.keyProjectsTable ul span {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.keyProjectsTable .listProjetcs li {
+  list-style-type: lower-roman;
+}
+
+
+
+

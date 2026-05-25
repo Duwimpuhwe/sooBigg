@@ -1,0 +1,120 @@
+:root {
+  --link-color: black;
+  --font-family: Garamond;
+  --font-fallback: Sans-serif;
+  --font-size: 1.3rem;
+  --anchor-color: rgb(19, 59, 84);
+  --anchor-fWeight: 500px;
+  --h2-textColor: rgb(11, 11, 84);
+}
+
+body {
+  margin: 0;
+  border: 0;
+}
+
+/* Navigation bar styling*/
+.nav-container {
+  width: 100%;
+  height: 60px;
+  display: flex; /* To allow a two dimensional layout.......It should be in the parent*/
+  flex-direction: row; /* it is a default direction also*/
+}
+
+a.page_link {
+  color: var(--link-color);
+  font-family: var(--font-family),var(--font-fallback);
+  font-size: var(--font-size);
+  margin: 20px;
+  text-decoration: none;
+  
+}
+
+a.page_link:hover {
+  font-weight: 800;
+}
+
+.page_buy {
+  position: absolute;
+  right: 40px;
+}
+
+.page_about {
+  position: absolute;
+  right: 100px;
+}
+
+.page_home {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center; /*To center on cross-axis, Most used value (navbars, icons + text)*/
+}
+
+.page_portfolio {
+  position: absolute;
+  right: 180px;
+}
+
+/*Styling main part*/
+.contributionBlock {
+  display: flex;
+  padding-top: 50px;
+  margin-bottom: 10px;
+  min-height: 100vh;
+  justify-content: center;
+  position: relative;
+}
+
+.contributionHeadings{
+  max-width: 200px;
+  min-width: 100px;
+  position: absolute;
+  top: 80px;
+  left: 40px;
+
+}
+
+.headerPartitioning {
+  border: none;
+  height: 100vh;
+  width: 2px;
+  background-color: rgba(113, 113, 140, 0.545);
+  margin: 0 10px;
+  position: absolute;
+  left: 250px;
+}
+
+.headerLinks {
+  list-style-type: none;
+  margin: 30px;
+}
+
+.headerLinks a{
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+.contributionBlock h2{
+  color: var(--h2-textColor);
+}
+
+.youTubeBlock {
+  display: none;
+}
+
+.keyContributionBlock{
+  display: none;
+}
+
+.articleBlock{
+  display: none;
+}
+
+.anchorHeader:active{
+  color:rgb(52, 20, 13)
+}
+
+
+
+
