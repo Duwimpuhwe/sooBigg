@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/images/favcons/myFavconLogo.png"/>
     <link rel="stylesheet" href="../styles/portfolio.css"/>
     <script src="../javaScript/navBar.js" defer></script> <!--defer attribute helps putting js in head and works perfectly, in this case defer does add any value since we used DOMContentLoaded in the JS-->
+    <script src="/javaScript/portfolio.js" defer></script>
   </head>
   <body>
     <!-- navigation bar section, code runs in the navBar.js file -->
@@ -62,7 +63,8 @@
     <hr/>
     <!-- Core content section-->
      <div class="mainContainer">
-      <div id="contribution" class="sectionContainer contrProject">
+      <div class="projects-split-container">
+        <div id="contribution" class="sectionContainer contrProject">
         <h2>Key Projects and Contributions</h2>
         <table class="keyProjectsTable">
           <thead>
@@ -174,6 +176,40 @@ Participated in various initiatives to ensure compliance with the International 
           </tbody>
         </table>
       </div>
+      <div class="project-slider-wrapper">
+        <div class="slider-container">
+          
+          <a href="https://u2s-frontend.netlify.app/" target="_blank" class="project-slide active">
+            <img src="https://api.microlink.io?url=https%3A%2F%2Fu2s-frontend.netlify.app&screenshot=true&embed=screenshot.url" alt="U2S Website">
+            <span class="slide-caption">Web Applications: Universal Umbrella Solutions</span>
+          </a>
+
+          <a href="https://www.arcgis.com/apps/dashboards/e505698fc93343fa91802d8315ad4d91" target="_blank" class="project-slide">
+            <img src="/assets/images/projects/GIS_malaria_DB.png" alt="Malaria Dashboard">
+            <span class="slide-caption">GIS: Malaria Prevalence Dashboard</span>
+          </a>
+
+          <a href="https://storymaps.arcgis.com/stories/8a9ff0b1751141c2a4cf72c735c2831f" target="_blank" class="project-slide">
+            <img src="/assets/images/projects/stroryMapInfrastructure.png" alt="Malaria Dashboard">
+            <span class="slide-caption">GIS: story Maps - Infrastructure</span>
+          </a>
+
+          <a href="https://storymaps.arcgis.com/stories/e9be58c418ae45ae9b96aa3c116d495d" target="_blank" class="project-slide">
+            <img src="/assets/images/projects/stroryMapWalk.png" alt="Malaria Dashboard">
+            <span class="slide-caption">GIS: story Maps - Walking to work</span>
+          </a>
+
+          <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099741407092528476" target="_blank" class="project-slide">
+            <img src="/assets/images/projects/E-Mobility_WB.png" alt="E-mobility Framework">
+            <span class="slide-caption">E-mobility: World Bank Grid Impact Study</span>
+          </a>
+
+          <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+       </div>
+      </div>
+      
 
       <hr/>
       <div id="education" class="sectionContainer educBackrnd">
