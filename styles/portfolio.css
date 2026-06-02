@@ -1,25 +1,36 @@
 :root {
-  --link-color: black;
-  --font-family: Garamond;
-  --font-fallback: Sans-serif;
-  --font-size: 1.3rem;
+  --link-color: #000000;
+  --font-family: 'Garamond', serif;
+  --font-fallback: sans-serif;
+  --font-size: 1.1rem; /* Slightly reduced default size for better readability with Garamond */
   --anchor-color: rgb(19, 59, 84);
-  --anchor-fWeight: 500px;
+  --anchor-fWeight: 500; /* Fixed: Removed 'px' */
   --tableHeader-bcgrnd: rgba(197, 191, 183, 0.3);
   --h2-textColor: rgb(11, 11, 84);
-  --th-backgroundColor: rgba(140, 155, 156, 0.553);
+  --th-backgroundColor: rgba(140, 155, 156, 0.15); /* Softened for a cleaner look */
+  --text-dark: #222222;
 }
 
-/*Global styling*/
+/* Global styling */
 body {
   margin: 0;
-  border: 0;
+  padding: 0;
+  font-family: var(--font-family), var(--font-fallback);
+  font-size: var(--font-size);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: #faf9f6; /* Soft off-white background is easier on the eyes than pure white */
 }
+
 h2 {
   color: var(--h2-textColor);
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 hr {
+  margin: 20px 0;
   border: none;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -149,47 +160,93 @@ a.page_link:hover {
   gap: 8px;
 }
 
-/* Styling main content*/
+/* Styling main content */
 .mainContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.sectionContainer {
-  width: 100%;
-  height: 100%;
-  margin: 10px;  
+  max-width: 1200px; /* Limits large screen stretching */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+.sectionContainer {
+  width: 100%;
+  /* Removed fixed height: 100% and hardcoded margin to prevent overflow */
+  padding: 10px 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Beautifully centers your content blocks */
+}
+
+/* Grouped content blocks */
 .educBackrnd, .contrProject, .pubTrain, .experSkill {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  width: 80%;  
+  width: 100%;
+  max-width: 900px; 
+  margin-bottom: 40px;
+  margin-left: auto;   /* FIX: Centers the entire block on the page */
+  margin-right: auto;  /* FIX: Centers the entire block on the page */
+  text-align: left; 
 }
 
-.educationtable thead th, .keyProjectsTable thead th, .trainingTable thead th, .experienceTable thead th {
-  background-color: var( --tableHeader-bcgrnd);
+/* Unified Table Styling */
+table {
+  width: 100%;
+  max-width: 100%;           /* Keeps it perfectly contained */
+  border-collapse: collapse;
+  margin: 15px auto;         /* FIX: Centers the table perfectly */
+  overflow: hidden; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+  border-radius: 4px;
 }
 
-.keyProjectsTable thead th:first-child, .pubTrain thead th:first-child,.experSkill thead th:first-child  {
+th, td {
+  padding: 12px 15px;
+  text-align: left; /* Left-aligned table columns look significantly cleaner */
+}
+
+/* Table Header Customization */
+.educationtable thead th, 
+.keyProjectsTable thead th, 
+.trainingTable thead th, 
+.experienceTable thead th {
+  background-color: var(--tableHeader-bcgrnd);
+  color: var(--h2-textColor);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Specific column widths */
+.keyProjectsTable thead th:first-child, 
+.pubTrain thead th:first-child,
+.experSkill thead th:first-child {
   width: 150px;
 }
-.keyProjectsTable tbody th, .educationtable tbody th, .trainingTable tbody th, .experienceTable tbody th {
+
+/* Body Header cells (e.g., Row Titles) */
+.keyProjectsTable tbody th, 
+.educationtable tbody th, 
+.trainingTable tbody th, 
+.experienceTable tbody th {
   background-color: var(--th-backgroundColor);
   font-style: italic;
+  font-weight: 500;
+  color: var(--anchor-color);
 }
 
-.keyProjectsTable tbody li, .pubTrain tbody td {
+/* Lists and Typography inside tables */
+.keyProjectsTable tbody li, 
+.pubTrain tbody td {
   text-align: left;
-  margin: 10px;
+  margin: 8px 0;
 }
 
 .keyProjectsTable h4 {
   text-align: left;
-  margin-left: 40px;
+  margin: 15px 0 5px 0;
+  color: var(--anchor-color);
 }
 
 .keyProjectsTable ul span {
@@ -199,8 +256,8 @@ a.page_link:hover {
 
 .keyProjectsTable .listProjetcs li {
   list-style-type: lower-roman;
+  margin-left: 20px;
 }
-
 
 
 
